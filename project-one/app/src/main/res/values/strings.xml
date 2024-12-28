@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Pizza</string>
+    <string name="title">Beef Cheese</string>
+    <string name="cheese_text">Cheese</string>
+    <string name="sausage_text">Sausage</string>
+    <string name="olive_text">Olive</string>
+    <string name="pepper_text">Pepper</string>
+    <string name="time">20 min</string>
+    <string name="title2">Delivery</string>
+    <string name="description">Meat lover, get ready to meet your pizza !</string>
+    <string name="price">$ 5.98</string>
+    <string name="button_text">ADD TO CARD</string>
+</resources>

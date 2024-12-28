@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Profilim</string>
+    <string name="name">Yusuf Mendeş</string>
+    <string name="title">Android Geliştiricisi | Kotlin Öğreniyor</string>
+    <string name="about">Merhaba! Ben Yusuf, bir Android uygulama geliştiricisiyim.\nKotlin ile modern ve kullanıcı dostu uygulamalar geliştiriyorum.\nJetpack Compose en sevdiğim araçlardan biri!</string>
+    <string name="edit">Edit</string>
+    <string name="message">Send Message</string>
+</resources>

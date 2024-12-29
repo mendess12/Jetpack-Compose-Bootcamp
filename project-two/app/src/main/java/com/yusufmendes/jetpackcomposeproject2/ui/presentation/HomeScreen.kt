@@ -41,7 +41,7 @@ fun HomeScreen(navController: NavController) {
             }
 
             Button(onClick = {
-                navController.navigate("detailScreen")
+                navController.navigate("detailScreen/Yusuf/24/1.78f/false")
             }) {
                 Text(text = "Go to Detail Screen")
             }

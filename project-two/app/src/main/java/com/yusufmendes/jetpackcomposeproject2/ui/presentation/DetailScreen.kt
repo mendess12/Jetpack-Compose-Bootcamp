@@ -15,7 +15,13 @@ import androidx.navigation.NavController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailScreen(navController: NavController) {
+fun DetailScreen(
+    navController: NavController,
+    name: String,
+    age: Int,
+    height: Float,
+    isMarried: Boolean
+) {
     Scaffold(topBar = {
         TopAppBar(
             title = { Text(text = "Detail") })
@@ -27,7 +33,8 @@ fun DetailScreen(navController: NavController) {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "Hello Jetpack Compose")
+            //Text(text = "Hello Jetpack Compose")
+            Text(text = "$name - $age - $height - $isMarried")
         }
     }
 }

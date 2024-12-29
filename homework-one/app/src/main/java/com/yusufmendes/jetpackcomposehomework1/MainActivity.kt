@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,10 +28,14 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.yusufmendes.jetpackcomposehomework1.ui.theme.JetpackComposeHomework1Theme
-import com.yusufmendes.jetpackcomposehomework1.ui.theme.aboutTextColor
+import com.yusufmendes.jetpackcomposehomework1.ui.theme.editButtonColor
+import com.yusufmendes.jetpackcomposehomework1.ui.theme.messageButtonColor
 import com.yusufmendes.jetpackcomposehomework1.ui.theme.screenBackground
-import com.yusufmendes.jetpackcomposehomework1.ui.theme.subTitleColor
+import com.yusufmendes.jetpackcomposehomework1.ui.theme.screenBackgroundDarkMode
 import com.yusufmendes.jetpackcomposehomework1.ui.theme.textColor
+import com.yusufmendes.jetpackcomposehomework1.ui.theme.textColorDarkMode
+import com.yusufmendes.jetpackcomposehomework1.ui.theme.topBarColor
+import com.yusufmendes.jetpackcomposehomework1.ui.theme.topBarColorDarkMode
 import com.yusufmendes.jetpackcomposehomework1.ui.widgets.EditAndMessageButton
 import com.yusufmendes.jetpackcomposehomework1.ui.widgets.ImageIcon
 import com.yusufmendes.jetpackcomposehomework1.ui.widgets.PersonalInformationText
@@ -49,7 +54,7 @@ class MainActivity : ComponentActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProfileScreen() {
+fun ProfileScreen(darkTheme: Boolean = isSystemInDarkTheme()) {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
@@ -60,8 +65,8 @@ fun ProfileScreen() {
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = subTitleColor,
-                    titleContentColor = textColor
+                    containerColor = if (darkTheme) topBarColorDarkMode else topBarColor,
+                    titleContentColor = if (darkTheme) textColorDarkMode else textColor
                 )
             )
         }
@@ -70,7 +75,11 @@ fun ProfileScreen() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .background(Color(screenBackground.toArgb())),
+                .background(
+                    if (darkTheme) Color(screenBackgroundDarkMode.toArgb()) else Color(
+                        screenBackground.toArgb()
+                    )
+                ),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -81,20 +90,22 @@ fun ProfileScreen() {
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 //profile image
-                ImageIcon(R.drawable.baseline_android_24, 60.dp)
-                ImageIcon(R.drawable.profile_image, 150.dp)
-                ImageIcon(R.drawable.baseline_message_24, 60.dp)
+                ImageIcon(R.drawable.baseline_android_24, 60.dp, darkTheme)
+                ImageIcon(R.drawable.profile_image, 150.dp, darkTheme)
+                ImageIcon(R.drawable.baseline_message_24, 60.dp, darkTheme)
             }
 
 
             //name-surname
             PersonalInformationText(
                 stringResource(R.string.name),
-                MaterialTheme.typography.headlineMedium
+                MaterialTheme.typography.headlineMedium,
+                darkTheme
             )
             PersonalInformationText(
                 stringResource(R.string.title),
-                MaterialTheme.typography.bodyLarge
+                MaterialTheme.typography.bodyLarge,
+                darkTheme
             )
 
             //edit-send message button
@@ -102,21 +113,29 @@ fun ProfileScreen() {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                EditAndMessageButton(stringResource(id = R.string.edit))
-                EditAndMessageButton(stringResource(id = R.string.message))
+                EditAndMessageButton(stringResource(id = R.string.edit), editButtonColor, darkTheme)
+                EditAndMessageButton(
+                    stringResource(id = R.string.message),
+                    messageButtonColor,
+                    darkTheme
+                )
             }
 
             //about
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color(screenBackground.toArgb()))
+                    .background(
+                        if (darkTheme) Color(screenBackgroundDarkMode.toArgb()) else Color(
+                            screenBackground.toArgb()
+                        )
+                    )
                     .padding(16.dp)
             ) {
                 Text(
                     stringResource(id = R.string.about),
                     style = MaterialTheme.typography.bodyMedium,
-                    color = aboutTextColor
+                    color = if (darkTheme) textColorDarkMode else textColor
                 )
             }
         }

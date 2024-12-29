@@ -58,7 +58,8 @@ fun JetpackComposeHomework1Theme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = screenBackground.toArgb()
+            window.statusBarColor =
+                if (darkTheme) screenBackgroundDarkMode.toArgb() else screenBackground.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }

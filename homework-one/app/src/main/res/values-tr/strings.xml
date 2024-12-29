@@ -4,6 +4,6 @@
     <string name="name">Yusuf Mendeş</string>
     <string name="title">Android Geliştiricisi | Kotlin Öğreniyor</string>
     <string name="about">Merhaba! Ben Yusuf, bir Android uygulama geliştiricisiyim.\nKotlin ile modern ve kullanıcı dostu uygulamalar geliştiriyorum.\nJetpack Compose en sevdiğim araçlardan biri!</string>
-    <string name="edit">Edit</string>
-    <string name="message">Send Message</string>
+    <string name="edit">Düzenle</string>
+    <string name="message">Mesaj Gönder</string>
 </resources>

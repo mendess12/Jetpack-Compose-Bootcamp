@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import com.yusufmendes.jetpackcomposeproject2.data.model.Products
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -20,7 +21,8 @@ fun DetailScreen(
     name: String,
     age: Int,
     height: Float,
-    isMarried: Boolean
+    isMarried: Boolean,
+    product: Products
 ) {
     Scaffold(topBar = {
         TopAppBar(
@@ -34,7 +36,7 @@ fun DetailScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             //Text(text = "Hello Jetpack Compose")
-            Text(text = "$name - $age - $height - $isMarried")
+            Text(text = "$name - $age - $height - $isMarried - ${product.id} - ${product.name}")
         }
     }
 }

@@ -6,6 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.google.gson.Gson
+import com.yusufmendes.jetpackcomposeproject2.data.model.Products
 import com.yusufmendes.jetpackcomposeproject2.ui.presentation.DetailScreen
 import com.yusufmendes.jetpackcomposeproject2.ui.presentation.HomeScreen
 
@@ -18,19 +20,25 @@ fun NavigateToScreen() {
         }
 
         composable(
-            route = "detailScreen/{name}/{age}/{height}/{isMarried}",
+            route = "detailScreen/{name}/{age}/{height}/{isMarried}/{product}",
             arguments = listOf(
                 navArgument("name") { type = NavType.StringType },
                 navArgument("age") { type = NavType.IntType },
                 navArgument("height") { type = NavType.FloatType },
                 navArgument("isMarried") { type = NavType.BoolType },
+                navArgument("product") { type = NavType.StringType },
             )
         ) {
             val name = it.arguments?.getString("name")!!
             val age = it.arguments?.getInt("age")!!
             val height = it.arguments?.getFloat("height")!!
             val isMarried = it.arguments?.getBoolean("isMarried")!!
-            DetailScreen(navController = navController, name, age, height, isMarried)
+
+            //string to json
+            val jsonProduct = it.arguments?.getString("product")!!
+            val product = Gson().fromJson(jsonProduct, Products::class.java)
+
+            DetailScreen(navController = navController, name, age, height, isMarried, product)
         }
     }
 }

@@ -15,6 +15,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import com.google.gson.Gson
+import com.yusufmendes.jetpackcomposeproject2.data.model.Products
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -41,7 +43,10 @@ fun HomeScreen(navController: NavController) {
             }
 
             Button(onClick = {
-                navController.navigate("detailScreen/Yusuf/24/1.78f/false")
+                //object to json
+                val product = Products(100,"Phone")
+                val jsonProduct = Gson().toJson(product)
+                navController.navigate("detailScreen/Yusuf/24/1.78f/false/$jsonProduct")
             }) {
                 Text(text = "Go to Detail Screen")
             }

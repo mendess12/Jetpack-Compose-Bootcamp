@@ -1,5 +1,7 @@
 package com.yusufmendes.jetpackcomposeproject2.ui.presentation
 
+import android.util.Log
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -38,5 +40,11 @@ fun DetailScreen(
             //Text(text = "Hello Jetpack Compose")
             Text(text = "$name - $age - $height - $isMarried - ${product.id} - ${product.name}")
         }
+    }
+
+    //enabled : true ise geri dönüş aktif değil ve kod bloku içindeki kodlar çalışır
+    //enabled : false ise geri dönüş aktif ve kod bloku içindeki kodlar çalışmaz sadece bir önceki sayfaya gider.
+    BackHandler(false) {
+        Log.e("Detail Screen", "Back handler run")
     }
 }

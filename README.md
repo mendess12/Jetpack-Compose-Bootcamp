@@ -22,3 +22,13 @@
 | ------------------------- | ------------------------- |
 | ![homework-light-mode](https://github.com/user-attachments/assets/ceab4dec-7fa0-4bcd-923d-21d1f2e9640b) | ![homework-dark-mode](https://github.com/user-attachments/assets/52120e56-8ed2-4be2-87c9-74cbd73414a3) |
 
+### Proje 2
+
+- Butonlarda onClick işlemlerini etkin bir şekilde kullandım.
+- Sayfa geçişleri, sayfalar arası veri transferi ve nesne transferi işlemlerini uyguladım.
+- Projede ayrıca bottom bar kullanımını da gerçekleştirdim.
+
+| AnaSayfa        | Ayarlar  | Detay Sayfası  |
+| ------------------------- | ------------------------- |  ------------------------- |
+| ![home](https://github.com/user-attachments/assets/78f98a3f-e4f0-4f8a-a55e-950b87b13294) | ![settings](https://github.com/user-attachments/assets/cbc2616e-7021-438b-a2d3-2a949767469a) | ![detail](https://github.com/user-attachments/assets/4e403e89-d4e7-4f1b-925a-d29e2bead339) |  
+

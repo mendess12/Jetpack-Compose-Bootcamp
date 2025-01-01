@@ -10,13 +10,18 @@ import com.google.gson.Gson
 import com.yusufmendes.jetpackcomposeproject2.data.model.Products
 import com.yusufmendes.jetpackcomposeproject2.ui.presentation.DetailScreen
 import com.yusufmendes.jetpackcomposeproject2.ui.presentation.HomeScreen
+import com.yusufmendes.jetpackcomposeproject2.ui.presentation.SettingsScreen
 
 @Composable
-fun NavigateToScreen() {
+fun NavigateToScreen(selectScreen: String) {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "homeScreen") {
+    NavHost(navController = navController, startDestination = selectScreen) {
         composable("homeScreen") {
             HomeScreen(navController = navController)
+        }
+
+        composable("settingsScreen") {
+            SettingsScreen(navController = navController)
         }
 
         composable(

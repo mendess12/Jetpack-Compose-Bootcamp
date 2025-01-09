@@ -4,4 +4,7 @@
     <string name="home_message">Welcome to the Home Screen</string>
     <string name="home_button_one">Go to the Screen A</string>
     <string name="home_button_two">Go to the Screen X</string>
+    <string name="a_screen_title">A Screen</string>
+    <string name="a_screen_message">Welcome to the A Screen</string>
+    <string name="a_screen_button">Go to the Screen B</string>
 </resources>

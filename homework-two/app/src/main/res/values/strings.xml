@@ -10,4 +10,7 @@
     <string name="b_screen_title">B Screen</string>
     <string name="b_screen_message">Welcome to the B Screen</string>
     <string name="b_screen_button">Go to the Screen Y</string>
+    <string name="x_screen_title">X Screen</string>
+    <string name="x_screen_message">Welcome to the X Screen</string>
+    <string name="x_screen_button">Go to the Screen Y</string>
 </resources>

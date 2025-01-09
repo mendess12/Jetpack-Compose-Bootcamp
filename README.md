@@ -32,3 +32,13 @@
 | ------------------------- | ------------------------- |  ------------------------- |
 | ![home](https://github.com/user-attachments/assets/78f98a3f-e4f0-4f8a-a55e-950b87b13294) | ![settings](https://github.com/user-attachments/assets/cbc2616e-7021-438b-a2d3-2a949767469a) | ![detail](https://github.com/user-attachments/assets/4e403e89-d4e7-4f1b-925a-d29e2bead339) |  
 
+### Ödev 2
+
+- Ödevde sayfalar arası geçiş işlemlerini uyguladım.
+- Back stack yönetimini etkin bir şekilde kullandım.
+- Navigasyon işlemleri için Navigation bileşeninden faydalandım.
+
+| Ödev Ekranları      |
+| ------------------------- |
+| ![odev](https://github.com/user-attachments/assets/a108404c-62ae-4b60-8dac-0fea5dbe301a) |
+

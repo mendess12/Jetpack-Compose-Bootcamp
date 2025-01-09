@@ -13,4 +13,6 @@
     <string name="x_screen_title">X Screen</string>
     <string name="x_screen_message">Welcome to the X Screen</string>
     <string name="x_screen_button">Go to the Screen Y</string>
+    <string name="y_screen_title">Y Screen</string>
+    <string name="y_screen_message">Welcome to the Y Screen</string>
 </resources>

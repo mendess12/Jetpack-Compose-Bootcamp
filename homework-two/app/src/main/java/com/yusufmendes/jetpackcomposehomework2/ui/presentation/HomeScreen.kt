@@ -25,6 +25,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yusufmendes.jetpackcomposehomework2.R
+import com.yusufmendes.jetpackcomposehomework2.ui.theme.homeScreenBackground
+import com.yusufmendes.jetpackcomposehomework2.ui.theme.homeScreenTopBarBackground
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -33,7 +35,7 @@ fun HomeScreen() {
     Scaffold(topBar = {
         TopAppBar(
             colors = TopAppBarDefaults.topAppBarColors(
-                containerColor = Color.Gray,
+                containerColor = homeScreenTopBarBackground,
                 titleContentColor = Color.Black
             ),
             title = {
@@ -52,7 +54,7 @@ fun HomeScreen() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .background(Color.LightGray),
+                .background(homeScreenBackground),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {

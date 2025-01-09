@@ -24,13 +24,14 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.yusufmendes.jetpackcomposehomework2.R
 import com.yusufmendes.jetpackcomposehomework2.ui.theme.bScreenBackground
 import com.yusufmendes.jetpackcomposehomework2.ui.theme.bScreenTopBarBackground
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BScreen() {
+fun BScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(colors = TopAppBarDefaults.topAppBarColors(
@@ -63,7 +64,9 @@ fun BScreen() {
             Spacer(modifier = Modifier.padding(0.dp, 24.dp, 0.dp, 24.dp))
 
             Button(
-                onClick = {}, colors = ButtonDefaults.buttonColors(
+                onClick = {
+                    navController.navigate("yScreen")
+                }, colors = ButtonDefaults.buttonColors(
                     containerColor = bScreenTopBarBackground,
                     contentColor = Color.White
                 )

@@ -1,5 +1,6 @@
 package com.yusufmendes.jetpackcomposehomework2.ui.presentation
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,13 +21,14 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.yusufmendes.jetpackcomposehomework2.R
 import com.yusufmendes.jetpackcomposehomework2.ui.theme.yScreenBackground
 import com.yusufmendes.jetpackcomposehomework2.ui.theme.yScreenTopBarBackground
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun YScreen() {
+fun YScreen(navController: NavController) {
 
     Scaffold(
         topBar = {
@@ -57,6 +59,13 @@ fun YScreen() {
 
             Text(text = stringResource(R.string.y_screen_message), fontSize = 16.sp)
 
+        }
+    }
+
+    //the screen to go when you click back button. delete screen from back stack
+    BackHandler {
+        navController.navigate("homeScreen") {
+            popUpTo("yScreen") { inclusive = true }
         }
     }
 }

@@ -24,13 +24,14 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.yusufmendes.jetpackcomposehomework2.R
 import com.yusufmendes.jetpackcomposehomework2.ui.theme.homeScreenBackground
 import com.yusufmendes.jetpackcomposehomework2.ui.theme.homeScreenTopBarBackground
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController) {
 
     Scaffold(topBar = {
         TopAppBar(
@@ -64,7 +65,9 @@ fun HomeScreen() {
             Spacer(modifier = Modifier.padding(0.dp, 24.dp, 0.dp, 24.dp))
 
             Button(
-                onClick = {}, colors = ButtonDefaults.buttonColors(
+                onClick = {
+                    navController.navigate("aScreen")
+                }, colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Blue,
                     contentColor = Color.White
                 )
@@ -73,7 +76,9 @@ fun HomeScreen() {
             }
 
             Button(
-                onClick = {}, colors = ButtonDefaults.buttonColors(
+                onClick = {
+                    navController.navigate("xScreen")
+                }, colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Magenta,
                     contentColor = Color.White
                 )

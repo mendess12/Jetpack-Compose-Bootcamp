@@ -65,7 +65,7 @@ fun AScreen() {
 
             Button(
                 onClick = {}, colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.Red,
+                    containerColor = aScreenTopBarBackground,
                     contentColor = Color.White
                 )
             ) {

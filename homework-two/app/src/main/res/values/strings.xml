@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">JetpackComposeHomework2</string>
+    <string name="home_title">Home Screen</string>
+    <string name="home_message">Welcome to the Home Screen</string>
+    <string name="home_button_one">Go to the Screen A</string>
+    <string name="home_button_two">Go to the Screen X</string>
 </resources>

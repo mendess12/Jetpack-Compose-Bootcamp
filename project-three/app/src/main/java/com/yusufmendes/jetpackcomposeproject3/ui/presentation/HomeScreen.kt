@@ -108,6 +108,39 @@ fun HomeScreen() {
             //Image
             Image(painter = painterResource(R.drawable.mood_icon), contentDescription = "")
 
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                //Switch
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Switch(
+                        checked = switchState.value,
+                        onCheckedChange = { switchState.value = it })
+                    Text(
+                        modifier = Modifier.padding(10.dp),
+                        text = "Android Kotlin",
+                        fontFamily = FontFamily.SansSerif,
+                        fontSize = 16.sp,
+                        color = Color.Black
+                    )
+                }
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    //CheckBox
+                    Checkbox(
+                        checked = checkBoxState.value,
+                        onCheckedChange = { checkBoxState.value = it })
+                    Text(
+                        modifier = Modifier.padding(10.dp),
+                        text = "Jetpack Compose",
+                        fontFamily = FontFamily.SansSerif,
+                        fontSize = 16.sp,
+                        color = Color.Black
+                    )
+                }
+            }
+
         }
     }
 }

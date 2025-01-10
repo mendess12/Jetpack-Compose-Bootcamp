@@ -15,6 +15,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Slider
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -46,6 +47,7 @@ fun HomeScreen() {
     val checkBoxState = remember { mutableStateOf(false) }
     val radioButtonValue = remember { mutableStateOf(0) }
     val progressState = remember { mutableStateOf(false) }
+    val sliiderState = remember { mutableStateOf(0f) }
 
     Scaffold(topBar = {
         TopAppBar(
@@ -200,6 +202,19 @@ fun HomeScreen() {
                     Text("END", fontSize = 24.sp, fontStyle = FontStyle.Italic)
                 }
             }
+
+            //slider
+            Text(
+                "Slider result : ${sliiderState.value.toInt()}",
+                fontSize = 24.sp,
+                fontStyle = FontStyle.Italic
+            )
+            Slider(
+                value = sliiderState.value,
+                onValueChange = { sliiderState.value = it },
+                valueRange = 0f..100f,
+                modifier = Modifier.padding(all = 12.dp)
+            )
         }
     }
 }

@@ -141,6 +141,37 @@ fun HomeScreen() {
                 }
             }
 
+            //RadioButton
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    RadioButton(
+                        selected = (1 == radioButtonValue.value),
+                        onClick = { radioButtonValue.value = 1 })
+                    Text(
+                        modifier = Modifier.padding(10.dp),
+                        text = "Liverpool",
+                        fontFamily = FontFamily.SansSerif,
+                        fontSize = 16.sp,
+                        color = Color.Black
+                    )
+                }
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    RadioButton(
+                        selected = (2 == radioButtonValue.value),
+                        onClick = { radioButtonValue.value = 2 })
+                    Text(
+                        modifier = Modifier.padding(10.dp),
+                        text = "Arsenal",
+                        fontFamily = FontFamily.SansSerif,
+                        fontSize = 16.sp,
+                        color = Color.Black
+                    )
+                }
+            }
         }
     }
 }

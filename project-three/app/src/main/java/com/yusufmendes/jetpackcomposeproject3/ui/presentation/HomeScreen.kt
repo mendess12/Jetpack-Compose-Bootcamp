@@ -172,6 +172,34 @@ fun HomeScreen() {
                     )
                 }
             }
+
+            //progressBar
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                Button(colors = ButtonDefaults.buttonColors(
+                    contentColor = Color.Black,
+                    containerColor = Color.Green
+                ), onClick = {
+                    progressState.value = true
+                }) {
+                    Text("START", fontSize = 24.sp, fontStyle = FontStyle.Italic)
+                }
+
+                if (progressState.value) {
+                    CircularProgressIndicator(color = Color.Gray)
+                }
+
+                Button(colors = ButtonDefaults.buttonColors(
+                    contentColor = Color.Black,
+                    containerColor = Color.Red
+                ), onClick = {
+                    progressState.value = false
+                }) {
+                    Text("END", fontSize = 24.sp, fontStyle = FontStyle.Italic)
+                }
+            }
         }
     }
 }

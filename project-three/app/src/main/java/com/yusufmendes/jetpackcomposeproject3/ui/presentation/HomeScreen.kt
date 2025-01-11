@@ -1,17 +1,22 @@
 package com.yusufmendes.jetpackcomposeproject3.ui.presentation
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
@@ -48,6 +53,9 @@ fun HomeScreen() {
     val radioButtonValue = remember { mutableStateOf(0) }
     val progressState = remember { mutableStateOf(false) }
     val sliiderState = remember { mutableStateOf(0f) }
+    val countryList = listOf("Turkey", "Italia")
+    val checkOpen = remember { mutableStateOf(false) }
+    val selectIndex = remember { mutableStateOf(0) }
 
     Scaffold(topBar = {
         TopAppBar(
@@ -215,6 +223,50 @@ fun HomeScreen() {
                 valueRange = 0f..100f,
                 modifier = Modifier.padding(all = 12.dp)
             )
+
+            //Drop down
+            Box {
+                Row(
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                        .size(100.dp, 50.dp)
+                        .clickable {
+                            checkOpen.value = true
+                        }
+                ) {
+                    Text(
+                        text = countryList[selectIndex.value],
+                        fontSize = 24.sp,
+                        fontStyle = FontStyle.Italic
+                    )
+                    Image(
+                        painter = painterResource(R.drawable.drow_down_icon),
+                        contentDescription = ""
+                    )
+                }
+
+                DropdownMenu(
+                    expanded = checkOpen.value,
+                    onDismissRequest = { checkOpen.value = false }
+                ) {
+                    countryList.forEachIndexed { index, country ->
+                        DropdownMenuItem(
+                            text = {
+                                Text(
+                                    text = country,
+                                    fontSize = 24.sp,
+                                    fontStyle = FontStyle.Italic
+                                )
+                            },
+                            onClick = {
+                                selectIndex.value = index
+                                checkOpen.value = false
+                            }
+                        )
+                    }
+                }
+            }
         }
     }
 }

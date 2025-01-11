@@ -42,3 +42,13 @@
 | ------------------------- |
 | ![odev](https://github.com/user-attachments/assets/a108404c-62ae-4b60-8dac-0fea5dbe301a) |
 
+### Proje 3
+
+- Text, TextField ve Image widgetlarını kullanarak temel bileşenleri öğrendim.
+- DropDown, CheckBox, Slider ve ProgressBar widgetlarını projeye ekledim.
+- RadioButton, Switch ve Button gibi etkileşimli bileşenleri deneyimledim.
+
+| Proje Ekranı      |
+| ------------------------- |
+| ![project3](https://github.com/user-attachments/assets/0b08830b-4faa-4a50-9d12-5fa8c4fd9002) |
+

@@ -13,6 +13,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -27,6 +29,8 @@ import com.yusufmendes.jetpackcomposehomework3.ui.theme.TextColor
 @Composable
 fun CalculatorApp() {
 
+    val number = remember { mutableStateOf("0") }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -34,7 +38,7 @@ fun CalculatorApp() {
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
-            text = "Calculator app",
+            text = number.value,
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f)
@@ -72,7 +76,9 @@ fun CalculatorApp() {
                                     contentColor = TextColor
                                 )
                             },
-                            onClick = {},
+                            onClick = {
+                                number.value = buttonClick(label, number.value)
+                            },
                             modifier = Modifier
                                 .weight(1f)
                                 .aspectRatio(1f)
@@ -81,7 +87,7 @@ fun CalculatorApp() {
                             Text(
                                 text = label,
                                 color = TextColor,
-                                fontSize = 20.sp,
+                                fontSize = 24.sp,
                                 fontStyle = FontStyle.Italic,
                                 fontFamily = FontFamily.SansSerif
                             )
@@ -89,6 +95,17 @@ fun CalculatorApp() {
                     }
                 }
             }
+        }
+    }
+}
+
+private fun buttonClick(label: String, currentNumber: String): String {
+
+    return when (label) {
+        "C" -> "0"
+        "=" -> "calculate result"
+        else -> {
+            if (currentNumber == "0") label else currentNumber + label
         }
     }
 }

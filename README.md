@@ -38,7 +38,7 @@
 - Back stack yönetimini etkin bir şekilde kullandım.
 - Navigasyon işlemleri için Navigation bileşeninden faydalandım.
 
-| Ödev Ekranları      |
+| Ödev Ekranı     |
 | ------------------------- |
 | ![odev](https://github.com/user-attachments/assets/a108404c-62ae-4b60-8dac-0fea5dbe301a) |
 
@@ -51,4 +51,14 @@
 | Proje Ekranı      |
 | ------------------------- |
 | ![project3](https://github.com/user-attachments/assets/0b08830b-4faa-4a50-9d12-5fa8c4fd9002) |
+
+### Ödev 3
+
+- Hesap makinesi tasarımı yaptım.
+- Liste oluşturarak Liste item'lerini butonlara aktardım.
+- Liste item'larına göre butonların arka plan renklerini değiştirdim.
+
+| Ödev Ekranı      |
+| ------------------------- |
+| ![calculator](https://github.com/user-attachments/assets/d1a76de4-f442-4e2d-959d-5d9e5b934dc7) |
 

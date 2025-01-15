@@ -5,8 +5,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Snackbar
 import androidx.compose.material3.SnackbarHost
@@ -16,6 +19,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -34,6 +38,7 @@ fun HomeScreen() {
 
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
+    val checkOpen = remember { mutableStateOf(false) }
 
     Scaffold(topBar = {
         TopAppBar(
@@ -85,9 +90,42 @@ fun HomeScreen() {
                 Text(text = "Show Snackbar")
             }
             Button(onClick = {
-
+                checkOpen.value = true
             }) {
                 Text(text = "Show Alert Dialog")
+            }
+            if (checkOpen.value) {
+                AlertDialog(
+                    onDismissRequest = { checkOpen.value = false },
+                    title = { Text(text = "Jetpack Compose") },
+                    text = { Text(text = "Do you want to learn Jetpack Compose?") },
+                    confirmButton = {
+                        OutlinedButton(
+                            onClick = {
+                                checkOpen.value = false
+                                scope.launch {
+                                    snackbarHostState.showSnackbar(message = "Clicked Yes")
+                                }
+                            }, colors = ButtonDefaults.buttonColors(
+                                containerColor = BackgroundColor,
+                                contentColor = TextColor
+                            )
+                        ) { Text(text = "Yes") }
+
+                        OutlinedButton(
+                            onClick = {
+                                checkOpen.value = false
+                                scope.launch {
+                                    snackbarHostState.showSnackbar(message = "Clicked No")
+                                }
+                            },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = BackgroundColor,
+                                contentColor = TextColor
+                            )
+                        ) { Text(text = "No") }
+                    }
+                )
             }
         }
     }

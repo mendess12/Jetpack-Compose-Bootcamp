@@ -62,3 +62,11 @@
 | ------------------------- |
 | ![calculator](https://github.com/user-attachments/assets/d1a76de4-f442-4e2d-959d-5d9e5b934dc7) |
 
+### Proje 4
+
+- Snack bar kullanımını ve Alert Dialog oluşturmayı öğrendim.
+
+| Snackbar Ekranı      | Snackbar Ekranı      |
+| ------------------------- | ------------------------- |
+| ![snackbar](https://github.com/user-attachments/assets/883c5c9a-6196-46a3-9e18-752be1f77c25) | ![alert-dialog](https://github.com/user-attachments/assets/87a3787e-4244-4723-99e5-441353f5f12d) |
+

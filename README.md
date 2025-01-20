@@ -70,3 +70,13 @@
 | ------------------------- | ------------------------- |
 | ![snackbar](https://github.com/user-attachments/assets/883c5c9a-6196-46a3-9e18-752be1f77c25) | ![alert-dialog](https://github.com/user-attachments/assets/87a3787e-4244-4723-99e5-441353f5f12d) |
 
+### Proje 5
+
+- Listeleme işlemini nasıl yapacağımı öğrendim ve projede uyguladım.
+- Listedeki öğelere tıklandığında detay sayfasına geçiş işlemini gerçekleştirdim.
+- Kullanıcı deneyimini artırmak için Floating Action Button ekledim.
+
+| Liste Ekranı     | Detay Ekranı      | Kişi Ekleme Ekranı      |
+| ------------------------- | ------------------------- | ------------------------- |
+| ![list](https://github.com/user-attachments/assets/24052c11-49aa-4743-80b9-77c828943b94) | ![detail](https://github.com/user-attachments/assets/a04bd6ba-4f1b-4bbb-8ff7-1fc55a447e87) | ![add](https://github.com/user-attachments/assets/33732994-ac72-4480-9a52-e720d7c827fb) |
+

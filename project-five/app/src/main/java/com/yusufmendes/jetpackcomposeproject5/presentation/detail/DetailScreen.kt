@@ -107,7 +107,7 @@ fun DetailScreen(user: Users) {
                 modifier = Modifier.size(250.dp, 50.dp),
                 onClick = {
                     updateUser(
-                        userId = user.kisi_id.toString(),
+                        userId = user.kisi_id,
                         userName = userName.value,
                         userPhone = userPhone.value
                     )
@@ -129,6 +129,6 @@ fun DetailScreen(user: Users) {
     }
 }
 
-fun updateUser(userId: String, userName: String, userPhone: String) {
+fun updateUser(userId: Int, userName: String, userPhone: String) {
     //save user function
 }

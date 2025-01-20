@@ -11,11 +11,17 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -28,13 +34,15 @@ import androidx.navigation.NavController
 import com.google.gson.Gson
 import com.yusufmendes.jetpackcomposeproject5.R
 import com.yusufmendes.jetpackcomposeproject5.data.model.Users
-import com.yusufmendes.jetpackcomposeproject5.presentation.detail.updateUser
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     navController: NavController
 ) {
+
+    val isSearching = remember { mutableStateOf(false) }
+    val word = remember { mutableStateOf("") }
 
     Scaffold(topBar = {
         TopAppBar(
@@ -43,14 +51,58 @@ fun HomeScreen(
                 titleContentColor = Color.Black
             ),
             title = {
-                Text(
-                    modifier = Modifier.fillMaxWidth(),
-                    text = "Home",
-                    textAlign = TextAlign.Center,
-                    fontStyle = FontStyle.Italic,
-                    fontSize = 30.sp,
-                    color = Color.Black
-                )
+                if (isSearching.value) {
+                    TextField(
+                        value = word.value,
+                        onValueChange = {
+                            word.value = it
+                            search(it)
+                        },
+                        label = {
+                            Text(text = "Searching")
+                        }, colors = TextFieldDefaults.textFieldColors(
+                            containerColor = Color.Transparent,
+                            focusedLabelColor = Color.White,
+                            focusedIndicatorColor = Color.White,
+                            unfocusedLabelColor = Color.Black,
+                            unfocusedIndicatorColor = Color.White
+                        )
+                    )
+                } else {
+                    Text(
+                        modifier = Modifier.fillMaxWidth(),
+                        text = "Users",
+                        fontStyle = FontStyle.Italic,
+                        fontSize = 24.sp,
+                        color = Color.Black
+                    )
+                }
+            },
+            actions = {
+                if (isSearching.value) {
+                    IconButton(
+                        onClick = {
+                            isSearching.value = false
+                            word.value = " "
+                        }
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.close_icon),
+                            contentDescription = ""
+                        )
+                    }
+                } else {
+                    IconButton(
+                        onClick = {
+                            isSearching.value = true
+                        }
+                    ) {
+                        Icon(
+                            painter = painterResource(R.drawable.search_icon),
+                            contentDescription = ""
+                        )
+                    }
+                }
             }
         )
     },
@@ -98,4 +150,8 @@ fun HomeScreen(
         }
 
     }
+}
+
+private fun search(searchWord: String) {
+
 }

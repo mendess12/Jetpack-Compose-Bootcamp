@@ -17,6 +17,8 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -24,6 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -37,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.yusufmendes.movieapp.data.model.Movies
+import kotlinx.coroutines.launch
 
 @SuppressLint("ContextCastToActivity")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -44,7 +48,8 @@ import com.yusufmendes.movieapp.data.model.Movies
 fun HomeScreen(navController: NavController) {
 
     val movieList = remember { mutableStateListOf<Movies>() }
-    
+    val scope = rememberCoroutineScope()
+    val snackbarHostState = remember { SnackbarHostState() }
 
     LaunchedEffect(key1 = true) {
         val movie1 = Movies(1, "Django", "django", 24)
@@ -78,7 +83,9 @@ fun HomeScreen(navController: NavController) {
                 )
             }
         )
-    }) { paddingValues ->
+    },
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
+    ) { paddingValues ->
 
         LazyVerticalGrid(
             modifier = Modifier
@@ -115,12 +122,16 @@ fun HomeScreen(navController: NavController) {
                                     color = Color.Black
                                 )
                                 Button(
-                                    onClick = {}, colors = ButtonDefaults.buttonColors(
+                                    onClick = {
+                                        scope.launch {
+                                            snackbarHostState.showSnackbar("${movie.ad} added ")
+                                        }
+                                    }, colors = ButtonDefaults.buttonColors(
                                         containerColor = Color.Yellow,
                                         contentColor = Color.Black
                                     )
                                 ) {
-                                    Text(text = "Sepet")
+                                    Text(text = "Add To Bag")
                                 }
                             }
                         }

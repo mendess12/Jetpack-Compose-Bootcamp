@@ -80,3 +80,14 @@
 | ------------------------- | ------------------------- | ------------------------- |
 | ![list](https://github.com/user-attachments/assets/24052c11-49aa-4743-80b9-77c828943b94) | ![detail](https://github.com/user-attachments/assets/a04bd6ba-4f1b-4bbb-8ff7-1fc55a447e87) | ![add](https://github.com/user-attachments/assets/33732994-ac72-4480-9a52-e720d7c827fb) |
 
+### Proje 6
+
+- Listeleme işlemini nasıl yapacağımı öğrendim ve projede uyguladım.
+- Listedeki öğelere tıklandığında detay sayfasına geçiş işlemini gerçekleştirdim.
+
+| Liste Ekranı     | Detay Ekranı      |
+| ------------------------- | ------------------------- |
+| ![home](https://github.com/user-attachments/assets/866b6973-6f18-4253-a231-f314cc07951c) | ![detail](https://github.com/user-attachments/assets/1cdcd52d-f17b-4338-8142-a86f0e494a42) |
+
+
+

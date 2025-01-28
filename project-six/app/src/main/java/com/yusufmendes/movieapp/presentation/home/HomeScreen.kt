@@ -3,6 +3,7 @@ package com.yusufmendes.movieapp.presentation.home
 import android.annotation.SuppressLint
 import android.app.Activity
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -39,6 +40,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.google.gson.Gson
 import com.yusufmendes.movieapp.data.model.Movies
 import kotlinx.coroutines.launch
 
@@ -98,7 +100,12 @@ fun HomeScreen(navController: NavController) {
                 itemContent = {
                     val movie = movieList[it]
                     Card(modifier = Modifier.padding(all = 5.dp)) {
-                        Column(modifier = Modifier.fillMaxWidth()) {
+                        Column(modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                val jsonMovie = Gson().toJson(movie)
+                                navController.navigate("detailScreen/${ jsonMovie}")
+                            }) {
                             val activity = (LocalContext.current as Activity)
                             Image(
                                 bitmap = ImageBitmap.imageResource(

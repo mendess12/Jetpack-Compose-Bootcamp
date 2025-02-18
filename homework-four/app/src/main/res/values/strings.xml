@@ -2,7 +2,9 @@
     <string name="app_name">JetpackComposeHomework4</string>
     <string name="home">getir</string>
     <string name="favorites">Favorites</string>
-    <string name="search">Search</string>
+    <string name="search">Ürün Ara</string>
+    <string name="search_screen">Arama</string>
     <string name="profile">Profile</string>
+    <string name="popular_search">Popüler Aramalar</string>
     <string name="address">Ev Maden Sokak No: 1 Daire: 2</string>
 </resources>

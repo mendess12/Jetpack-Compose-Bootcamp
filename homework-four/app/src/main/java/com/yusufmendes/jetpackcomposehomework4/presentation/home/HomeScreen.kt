@@ -38,7 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.yusufmendes.jetpackcomposehomework4.R
-import com.yusufmendes.jetpackcomposehomework4.data.model.Foods
+import com.yusufmendes.jetpackcomposehomework4.data.model.Categories
 import com.yusufmendes.jetpackcomposehomework4.ui.theme.itemScreenBackgroundColor
 import com.yusufmendes.jetpackcomposehomework4.ui.theme.screenBackgroundColor
 import com.yusufmendes.jetpackcomposehomework4.ui.theme.textColor
@@ -50,44 +50,44 @@ import com.yusufmendes.jetpackcomposehomework4.ui.theme.topBarTextColor
 @Composable
 fun HomeScreen(navController: NavController) {
 
-    val foodList = remember { mutableStateListOf<Foods>() }
+    val categoryList = remember { mutableStateListOf<Categories>() }
 
     LaunchedEffect(key1 = true) {
-        val food1 = Foods(1, "Su & İçecek", "water")
-        val food2 = Foods(2, "Atıştırmalık", "atistirmalik")
-        val food3 = Foods(3, "Meyve & Sebze", "fruit")
-        val food4 = Foods(4, "Süt Ürünleri", "sut_urunleri")
-        val food5 = Foods(5, "Fırından", "simit")
-        val food6 = Foods(6, "Dondurma", "dondurma")
-        val food7 = Foods(7, "Temel Gıda", "temel_gida")
-        val food8 = Foods(8, "Kahvaltılık", "kahvaltilik")
-        val food9 = Foods(9, "Yiyecek", "yiyecek")
-        val food10 = Foods(10, "Et, Tavuk & Balık", "et")
-        val food11 = Foods(11, "Fit & Form", "fit_form")
-        val food12 = Foods(12, "Kişisel Bakım", "kisisel_bakim")
-        val food13 = Foods(13, "Ev Bakım", "ev_bakim")
-        val food14 = Foods(14, "Ev & Yaşam", "ev_yasam")
-        val food15 = Foods(15, "Evcil Hayvan", "evcil_hayvan")
-        val food16 = Foods(16, "Bebek", "bebek")
-        val food17 = Foods(16, "Cinsel Sağlık", "cinsel_saglik")
+        val category1 = Categories(1, "Su & İçecek", "water")
+        val category2 = Categories(2, "Atıştırmalık", "atistirmalik")
+        val category3 = Categories(3, "Meyve & Sebze", "fruit")
+        val category4 = Categories(4, "Süt Ürünleri", "sut_urunleri")
+        val category5 = Categories(5, "Fırından", "simit")
+        val category6 = Categories(6, "Dondurma", "dondurma")
+        val category7 = Categories(7, "Temel Gıda", "temel_gida")
+        val category8 = Categories(8, "Kahvaltılık", "kahvaltilik")
+        val category9 = Categories(9, "Yiyecek", "yiyecek")
+        val category10 = Categories(10, "Et, Tavuk & Balık", "et")
+        val category11 = Categories(11, "Fit & Form", "fit_form")
+        val category12 = Categories(12, "Kişisel Bakım", "kisisel_bakim")
+        val category13 = Categories(13, "Ev Bakım", "ev_bakim")
+        val category14 = Categories(14, "Ev & Yaşam", "ev_yasam")
+        val category15 = Categories(15, "Evcil Hayvan", "evcil_hayvan")
+        val category16 = Categories(16, "Bebek", "bebek")
+        val category17 = Categories(16, "Cinsel Sağlık", "cinsel_saglik")
 
-        foodList.add(food1)
-        foodList.add(food2)
-        foodList.add(food3)
-        foodList.add(food4)
-        foodList.add(food5)
-        foodList.add(food6)
-        foodList.add(food7)
-        foodList.add(food8)
-        foodList.add(food9)
-        foodList.add(food10)
-        foodList.add(food11)
-        foodList.add(food12)
-        foodList.add(food13)
-        foodList.add(food14)
-        foodList.add(food15)
-        foodList.add(food16)
-        foodList.add(food17)
+        categoryList.add(category1)
+        categoryList.add(category2)
+        categoryList.add(category3)
+        categoryList.add(category4)
+        categoryList.add(category5)
+        categoryList.add(category6)
+        categoryList.add(category7)
+        categoryList.add(category8)
+        categoryList.add(category9)
+        categoryList.add(category10)
+        categoryList.add(category11)
+        categoryList.add(category12)
+        categoryList.add(category13)
+        categoryList.add(category14)
+        categoryList.add(category15)
+        categoryList.add(category16)
+        categoryList.add(category17)
 
     }
 
@@ -151,9 +151,9 @@ fun HomeScreen(navController: NavController) {
                 columns = GridCells.Fixed(count = 4)
             ) {
                 items(
-                    count = foodList.count(),
+                    count = categoryList.count(),
                     itemContent = {
-                        val food = foodList[it]
+                        val food = categoryList[it]
                         Card(
                             modifier = Modifier
                                 .padding(5.dp)

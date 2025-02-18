@@ -6,5 +6,6 @@
     <string name="search_screen">Arama</string>
     <string name="profile">Profile</string>
     <string name="popular_search">Popüler Aramalar</string>
+    <string name="best_sellers">Çok Satanlar</string>
     <string name="address">Ev Maden Sokak No: 1 Daire: 2</string>
 </resources>

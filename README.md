@@ -89,5 +89,15 @@
 | ------------------------- | ------------------------- |
 | ![home](https://github.com/user-attachments/assets/866b6973-6f18-4253-a231-f314cc07951c) | ![detail](https://github.com/user-attachments/assets/1cdcd52d-f17b-4338-8142-a86f0e494a42) |
 
+### Ödev 4
+
+- Bu ödevimde Getir uygulamasını tasarladım.
+- Listeleme işlemi, sayfalar arası geçiş, bottom bar kullandım.
+- Listelerde veri göstermek için model class'ı oluşturdum.
+
+| AnaSayfa Ekranı     | Arama Ekranı      | Profil Ekranı      | Kampanya Ekranı      |
+| ------------------------- | ------------------------- | ------------------------- | ------------------------- |
+| ![home_getir](https://github.com/user-attachments/assets/e2f2626e-8af6-4589-b1e2-ab840a98bf82) | ![search_getir](https://github.com/user-attachments/assets/b0b1445c-9be2-413b-a1bb-28fec02b504b) | ![profile_getir](https://github.com/user-attachments/assets/aefa8c5e-e836-4d07-8ecf-5b3f56e38114) | ![campaign_getir](https://github.com/user-attachments/assets/8b6c8a6b-fdfb-40bf-aa8c-0a0fd061efd7) | 
+
 
 

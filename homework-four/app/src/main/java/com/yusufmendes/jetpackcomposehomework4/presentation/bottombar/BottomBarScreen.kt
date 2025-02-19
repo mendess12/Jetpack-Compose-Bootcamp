@@ -82,7 +82,7 @@ fun BottomBarScreen() {
                     onClick = { selectedItem.value = 3 },
                     icon = {
                         Icon(
-                            painter = painterResource(id = R.drawable.favorite_icon),
+                            painter = painterResource(id = R.drawable.campaign_icon),
                             contentDescription = ""
                         )
                     }
@@ -100,7 +100,7 @@ fun BottomBarScreen() {
             if (selectedItem.value == 0) NavigateToScreen(selectScreen = "homeScreen")
             if (selectedItem.value == 1) NavigateToScreen(selectScreen = "searchScreen")
             if (selectedItem.value == 2) NavigateToScreen(selectScreen = "profileScreen")
-            if (selectedItem.value == 3) NavigateToScreen(selectScreen = "favoritesScreen")
+            if (selectedItem.value == 3) NavigateToScreen(selectScreen = "campaignScreen")
         }
     }
 }

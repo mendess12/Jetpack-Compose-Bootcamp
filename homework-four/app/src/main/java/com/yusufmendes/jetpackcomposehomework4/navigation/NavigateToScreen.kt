@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.yusufmendes.jetpackcomposehomework4.presentation.favorites.FavoritesScreen
+import com.yusufmendes.jetpackcomposehomework4.presentation.favorites.CampaignScreen
 import com.yusufmendes.jetpackcomposehomework4.presentation.home.HomeScreen
 import com.yusufmendes.jetpackcomposehomework4.presentation.profile.ProfileScreen
 import com.yusufmendes.jetpackcomposehomework4.presentation.search.SearchScreen
@@ -21,8 +21,8 @@ fun NavigateToScreen(selectScreen: String) {
         composable("searchScreen") {
             SearchScreen(navController = navController)
         }
-        composable("favoritesScreen") {
-            FavoritesScreen(navController = navController)
+        composable("campaignScreen") {
+            CampaignScreen(navController = navController)
         }
         composable("profileScreen") {
             ProfileScreen(navController = navController)

@@ -12,6 +12,10 @@
     <string name="turkish">Türkçe</string>
     <string name="favorites">Favorites</string>
     <string name="search">Ürün Ara</string>
+    <string name="announcements">Duyurular</string>
+    <string name="campaign">Kampanyalar</string>
+    <string name="add_campaign_code">Kampanya Kodu Ekle</string>
+    <string name="info">Kampanyalardan, sipariş takibinden ve daha fazlasından haberdar olmak istersen sana bildirim gönderebiliriz.</string>
     <string name="search_screen">Arama</string>
     <string name="profile">Profil</string>
     <string name="popular_search">Popüler Aramalar</string>

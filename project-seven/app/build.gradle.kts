@@ -57,7 +57,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    //viewmodel
+    //viewmodel - livedata
     implementation(libs.androidx.lifecycle.viewmodel)
     implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.runtime.livedata)
+
 }

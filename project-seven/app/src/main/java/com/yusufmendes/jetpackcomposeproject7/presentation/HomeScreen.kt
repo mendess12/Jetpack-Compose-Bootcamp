@@ -14,6 +14,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -31,7 +32,7 @@ fun HomeScreen(
 
     val tfNumber1 = remember { mutableStateOf("") }
     val tfNumber2 = remember { mutableStateOf("") }
-    val result = remember { mutableStateOf("0") }
+    val result = homeViewModel.result.observeAsState("0")
 
     Scaffold(
         topBar = {
@@ -86,14 +87,12 @@ fun HomeScreen(
 
                 Button(onClick = {
                     homeViewModel.sub(tfNumber1.value, tfNumber2.value)
-                    result.value = homeViewModel.result
                 }) {
                     Text(text = "Toplama")
                 }
 
                 Button(onClick = {
                     homeViewModel.multi(tfNumber1.value, tfNumber2.value)
-                    result.value = homeViewModel.result
                 }) {
                     Text(text = "Çarpma")
                 }

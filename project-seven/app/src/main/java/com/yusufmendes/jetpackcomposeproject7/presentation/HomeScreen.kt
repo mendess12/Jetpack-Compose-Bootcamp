@@ -25,7 +25,9 @@ import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    homeViewModel: HomeViewModel
+) {
 
     val tfNumber1 = remember { mutableStateOf("") }
     val tfNumber2 = remember { mutableStateOf("") }
@@ -83,27 +85,15 @@ fun HomeScreen() {
             ) {
 
                 Button(onClick = {
-                    val setNumber1 = tfNumber1.value
-                    val setNumber2 = tfNumber2.value
-
-                    val number1 = setNumber1.toInt()
-                    val number2 = setNumber2.toInt()
-
-                    val sub = number1 + number2
-                    result.value = sub.toString()
+                    homeViewModel.sub(tfNumber1.value, tfNumber2.value)
+                    result.value = homeViewModel.result
                 }) {
                     Text(text = "Toplama")
                 }
 
                 Button(onClick = {
-                    val setNumber1 = tfNumber1.value
-                    val setNumber2 = tfNumber2.value
-
-                    val number1 = setNumber1.toInt()
-                    val number2 = setNumber2.toInt()
-
-                    val multi = number1 * number2
-                    result.value = multi.toString()
+                    homeViewModel.multi(tfNumber1.value, tfNumber2.value)
+                    result.value = homeViewModel.result
                 }) {
                     Text(text = "Çarpma")
                 }

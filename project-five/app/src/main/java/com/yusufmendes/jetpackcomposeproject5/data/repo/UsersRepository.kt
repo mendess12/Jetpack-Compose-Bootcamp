@@ -1,5 +1,6 @@
 package com.yusufmendes.jetpackcomposeproject5.data.repo
 
+import com.yusufmendes.jetpackcomposeproject5.data.model.Users
 import com.yusufmendes.jetpackcomposeproject5.data.resource.UsersDataSource
 
 class UsersRepository {
@@ -12,4 +13,6 @@ class UsersRepository {
         usersDataSource.updateUser(userId, userName, userPhone)
 
     suspend fun deleteUser(userId: Int) = usersDataSource.deleteUser(userId)
+
+    suspend fun getUserList(): List<Users> = usersDataSource.getUserList()
 }

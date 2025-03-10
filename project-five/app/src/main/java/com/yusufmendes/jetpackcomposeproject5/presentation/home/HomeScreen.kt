@@ -27,7 +27,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -41,7 +41,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.google.gson.Gson
 import com.yusufmendes.jetpackcomposeproject5.R
-import com.yusufmendes.jetpackcomposeproject5.data.model.Users
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -53,20 +52,12 @@ fun HomeScreen(
 
     val isSearching = remember { mutableStateOf(false) }
     val word = remember { mutableStateOf("") }
-    val userList = remember { mutableStateListOf<Users>() }
+    val userList = homeViewModel.userList.observeAsState(listOf())
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
 
     LaunchedEffect(true) {
-        val user1 = Users(1, "Yusuf", "111111")
-        val user2 = Users(1, "Ahmet", "222222")
-        val user3 = Users(1, "Merve", "333333")
-        val user4 = Users(1, "Sevda", "444444")
-
-        userList.add(user1)
-        userList.add(user2)
-        userList.add(user3)
-        userList.add(user4)
+        homeViewModel.getUserList()
     }
 
     Scaffold(topBar = {
@@ -155,9 +146,9 @@ fun HomeScreen(
         ) {
             // recyclerview or list
             items(
-                count = userList.count(),
+                count = userList.value.count(),
                 itemContent = {
-                    val user = userList[it]
+                    val user = userList.value[it]
 
                     Card(modifier = Modifier.padding(5.dp)) {
 

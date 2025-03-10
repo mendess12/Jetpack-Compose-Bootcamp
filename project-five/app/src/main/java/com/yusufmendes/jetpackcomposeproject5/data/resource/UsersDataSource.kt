@@ -5,7 +5,13 @@ import kotlinx.coroutines.withContext
 
 class UsersDataSource {
 
-    suspend fun addUser(name: String, phone: String): Unit = withContext(Dispatchers.IO){
-        //add user
-    }
+    suspend fun addUser(name: String, phone: String): Unit =
+        withContext(Dispatchers.IO) {
+            //add user
+        }
+
+    suspend fun updateUser(userId: Int, userName: String, userPhone: String) =
+        withContext(Dispatchers.IO) {
+            //update user function
+        }
 }

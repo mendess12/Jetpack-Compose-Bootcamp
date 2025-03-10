@@ -31,7 +31,10 @@ import com.yusufmendes.jetpackcomposeproject5.data.model.Users
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailScreen(user: Users) {
+fun DetailScreen(
+    user: Users,
+    detailViewModel: DetailViewModel
+) {
 
     val userName = remember { mutableStateOf("") }
     val userPhone = remember { mutableStateOf("") }
@@ -106,7 +109,7 @@ fun DetailScreen(user: Users) {
             Button(
                 modifier = Modifier.size(250.dp, 50.dp),
                 onClick = {
-                    updateUser(
+                    detailViewModel.updateUser(
                         userId = user.kisi_id,
                         userName = userName.value,
                         userPhone = userPhone.value
@@ -127,8 +130,4 @@ fun DetailScreen(user: Users) {
             }
         }
     }
-}
-
-fun updateUser(userId: Int, userName: String, userPhone: String) {
-    //save user function
 }

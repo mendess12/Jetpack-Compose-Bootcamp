@@ -7,4 +7,7 @@ class UsersRepository {
     private val usersDataSource = UsersDataSource()
 
     suspend fun addUsers(name: String, phone: String) = usersDataSource.addUser(name, phone)
+
+    suspend fun updateUser(userId: Int, userName: String, userPhone: String) =
+        usersDataSource.updateUser(userId, userName, userPhone)
 }

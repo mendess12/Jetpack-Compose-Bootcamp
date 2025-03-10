@@ -10,4 +10,6 @@ class UsersRepository {
 
     suspend fun updateUser(userId: Int, userName: String, userPhone: String) =
         usersDataSource.updateUser(userId, userName, userPhone)
+
+    suspend fun deleteUser(userId: Int) = usersDataSource.deleteUser(userId)
 }

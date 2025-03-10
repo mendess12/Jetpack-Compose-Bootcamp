@@ -47,7 +47,8 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    navController: NavController
+    navController: NavController,
+    homeViewModel: HomeViewModel
 ) {
 
     val isSearching = remember { mutableStateOf(false) }
@@ -184,7 +185,7 @@ fun HomeScreen(
                                                 actionLabel = "YES"
                                             )
                                         if (snackbar == SnackbarResult.ActionPerformed) {
-                                            deleteUser(userId = user.kisi_id)
+                                            homeViewModel.deleteUser(userId = user.kisi_id)
                                         }
                                     }
                                 }
@@ -205,8 +206,4 @@ fun HomeScreen(
 
 private fun search(searchWord: String) {
     //search function
-}
-
-private fun deleteUser(userId: Int) {
-    //delete user function
 }

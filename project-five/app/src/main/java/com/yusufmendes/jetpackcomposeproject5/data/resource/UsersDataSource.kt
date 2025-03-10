@@ -14,4 +14,8 @@ class UsersDataSource {
         withContext(Dispatchers.IO) {
             //update user function
         }
+
+    suspend fun deleteUser(userId: Int) = withContext(Dispatchers.IO){
+        //delete user
+    }
 }

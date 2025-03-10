@@ -99,5 +99,13 @@
 | ------------------------- | ------------------------- | ------------------------- | ------------------------- |
 | ![home_getir](https://github.com/user-attachments/assets/e2f2626e-8af6-4589-b1e2-ab840a98bf82) | ![search_getir](https://github.com/user-attachments/assets/b0b1445c-9be2-413b-a1bb-28fec02b504b) | ![profile_getir](https://github.com/user-attachments/assets/aefa8c5e-e836-4d07-8ecf-5b3f56e38114) | ![campaign_getir](https://github.com/user-attachments/assets/8b6c8a6b-fdfb-40bf-aa8c-0a0fd061efd7) | 
 
+### Proje 7
+
+- Bu projede MVVM, livedata, repository ve data source uyguladım.
+
+| Toplama     | Çarpma      | 
+| ------------------------- | ------------------------- |
+| ![toplama](https://github.com/user-attachments/assets/66260b3e-1091-47b9-9272-5b72567f12f7) | ![carpma](https://github.com/user-attachments/assets/68e184d1-2488-4dc3-9c7e-4c2456126bbb) |
+
 
 

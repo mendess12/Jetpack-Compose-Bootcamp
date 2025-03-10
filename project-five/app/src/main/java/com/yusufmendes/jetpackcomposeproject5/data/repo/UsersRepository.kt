@@ -15,4 +15,6 @@ class UsersRepository {
     suspend fun deleteUser(userId: Int) = usersDataSource.deleteUser(userId)
 
     suspend fun getUserList(): List<Users> = usersDataSource.getUserList()
+
+    suspend fun searchUser(search: String): List<Users> = usersDataSource.searchUser(search)
 }

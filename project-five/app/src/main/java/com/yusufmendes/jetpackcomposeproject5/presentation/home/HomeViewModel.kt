@@ -13,15 +13,28 @@ class HomeViewModel : ViewModel() {
     private val usersRepository = UsersRepository()
     var userList = MutableLiveData<List<Users>>()
 
+
+    init {
+        getUserList()
+    }
+
     fun deleteUser(userId: Int) {
         CoroutineScope(Dispatchers.Main).launch {
             usersRepository.deleteUser(userId)
+            getUserList()
         }
     }
 
     fun getUserList() {
         CoroutineScope(Dispatchers.Main).launch {
             val result = usersRepository.getUserList()
+            userList.value = result
+        }
+    }
+
+    fun searchUser(search: String) {
+        CoroutineScope(Dispatchers.Main).launch {
+            val result = usersRepository.searchUser(search)
             userList.value = result
         }
     }

@@ -72,7 +72,7 @@ fun HomeScreen(
                         value = word.value,
                         onValueChange = {
                             word.value = it
-                            search(it)
+                            homeViewModel.searchUser(it)
                         },
                         label = {
                             Text(text = "Searching")
@@ -108,9 +108,11 @@ fun HomeScreen(
                         )
                     }
                 } else {
+                    homeViewModel.getUserList()
                     IconButton(
                         onClick = {
                             isSearching.value = true
+
                         }
                     ) {
                         Icon(
@@ -193,8 +195,4 @@ fun HomeScreen(
             )
         }
     }
-}
-
-private fun search(searchWord: String) {
-    //search function
 }

@@ -62,4 +62,9 @@ dependencies {
 
     //gson
     implementation(libs.gson)
+
+    //viewmodel - livedata
+    implementation(libs.androidx.lifecycle.lifecycle.viewmodel)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.runtime.livedata)
 }

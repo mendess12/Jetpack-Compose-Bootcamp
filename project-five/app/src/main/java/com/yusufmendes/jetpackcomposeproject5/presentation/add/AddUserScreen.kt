@@ -29,7 +29,9 @@ import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AddUserScreen() {
+fun AddUserScreen(
+    addUserViewModel: AddUserViewModel
+) {
 
     val userName = remember { mutableStateOf("") }
     val userPhone = remember { mutableStateOf("") }
@@ -99,7 +101,7 @@ fun AddUserScreen() {
             Button(
                 modifier = Modifier.size(250.dp, 50.dp),
                 onClick = {
-                    saveUser(userName = userName.value, userPhone = userPhone.value)
+                    addUserViewModel.addUser(userName.value, userPhone.value)
                 }, colors = ButtonDefaults.buttonColors(
                     contentColor = Color.Black,
                     containerColor = Color.LightGray
@@ -117,8 +119,4 @@ fun AddUserScreen() {
 
         }
     }
-}
-
-fun saveUser(userName: String, userPhone: String) {
-    //save user function
 }

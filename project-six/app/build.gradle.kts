@@ -61,5 +61,10 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
 
     //gson
-   implementation(libs.gson)
+    implementation(libs.gson)
+
+    //mvvm - livedata
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.runtime.livedata)
 }

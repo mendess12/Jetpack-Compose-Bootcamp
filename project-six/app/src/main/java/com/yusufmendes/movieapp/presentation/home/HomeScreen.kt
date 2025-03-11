@@ -47,7 +47,10 @@ import kotlinx.coroutines.launch
 @SuppressLint("ContextCastToActivity")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(navController: NavController) {
+fun HomeScreen(
+    navController: NavController,
+    homeViewModel: HomeViewModel
+) {
 
     val movieList = remember { mutableStateListOf<Movies>() }
     val scope = rememberCoroutineScope()

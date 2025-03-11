@@ -31,7 +31,10 @@ import com.yusufmendes.movieapp.data.model.Movies
 @SuppressLint("ContextCastToActivity")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailScreen(getMovie: Movies) {
+fun DetailScreen(
+    getMovie: Movies,
+    detailViewModel: DetailViewModel
+) {
 
     Scaffold(topBar = {
         TopAppBar(

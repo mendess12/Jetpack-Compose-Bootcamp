@@ -9,16 +9,21 @@ import androidx.navigation.navArgument
 import com.google.gson.Gson
 import com.yusufmendes.movieapp.data.model.Movies
 import com.yusufmendes.movieapp.presentation.detail.DetailScreen
+import com.yusufmendes.movieapp.presentation.detail.DetailViewModel
 import com.yusufmendes.movieapp.presentation.home.HomeScreen
+import com.yusufmendes.movieapp.presentation.home.HomeViewModel
 
 @Composable
-fun NavigateToScreen() {
+fun NavigateToScreen(
+    homeViewModel: HomeViewModel,
+    detailViewModel: DetailViewModel
+) {
 
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "homeScreen") {
         composable("homeScreen") {
-            HomeScreen(navController = navController)
+            HomeScreen(navController = navController, homeViewModel)
         }
 
         composable("detailScreen/{movie}", arguments = listOf(
@@ -26,7 +31,7 @@ fun NavigateToScreen() {
         )) {
             val json = it.arguments?.getString("movie")
             val movie = Gson().fromJson(json, Movies::class.java)
-            DetailScreen(movie)
+            DetailScreen(movie, detailViewModel)
         }
     }
 }

@@ -24,8 +24,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -41,7 +40,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.google.gson.Gson
-import com.yusufmendes.movieapp.data.model.Movies
 import kotlinx.coroutines.launch
 
 @SuppressLint("ContextCastToActivity")
@@ -52,24 +50,9 @@ fun HomeScreen(
     homeViewModel: HomeViewModel
 ) {
 
-    val movieList = remember { mutableStateListOf<Movies>() }
+    val movieList = homeViewModel.movieList.observeAsState(listOf())
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
-
-    LaunchedEffect(key1 = true) {
-        val movie1 = Movies(1, "Django", "django", 24)
-        val movie2 = Movies(1, "Interstellar", "interstellar", 32)
-        val movie3 = Movies(1, "Inception", "inception", 16)
-        val movie4 = Movies(1, "The Hateful Eight", "thehatefuleight", 28)
-        val movie5 = Movies(1, "The Pianist", "thepianist", 18)
-        val movie6 = Movies(1, "Anadoluda", "anadoluda", 10)
-        movieList.add(movie1)
-        movieList.add(movie2)
-        movieList.add(movie3)
-        movieList.add(movie4)
-        movieList.add(movie5)
-        movieList.add(movie6)
-    }
 
     Scaffold(topBar = {
         TopAppBar(
@@ -99,15 +82,15 @@ fun HomeScreen(
             columns = GridCells.Fixed(count = 2)
         ) {
             items(
-                count = movieList.count(),
+                count = movieList.value.count(),
                 itemContent = {
-                    val movie = movieList[it]
+                    val movie = movieList.value[it]
                     Card(modifier = Modifier.padding(all = 5.dp)) {
                         Column(modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
                                 val jsonMovie = Gson().toJson(movie)
-                                navController.navigate("detailScreen/${ jsonMovie}")
+                                navController.navigate("detailScreen/${jsonMovie}")
                             }) {
                             val activity = (LocalContext.current as Activity)
                             Image(

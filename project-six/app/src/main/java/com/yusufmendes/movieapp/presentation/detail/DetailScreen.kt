@@ -33,7 +33,6 @@ import com.yusufmendes.movieapp.data.model.Movies
 @Composable
 fun DetailScreen(
     getMovie: Movies,
-    detailViewModel: DetailViewModel
 ) {
 
     Scaffold(topBar = {

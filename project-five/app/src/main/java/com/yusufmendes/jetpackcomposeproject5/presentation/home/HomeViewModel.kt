@@ -4,15 +4,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.yusufmendes.jetpackcomposeproject5.data.model.Users
 import com.yusufmendes.jetpackcomposeproject5.data.repo.UsersRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel : ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor(
+    private val usersRepository: UsersRepository
+) : ViewModel() {
 
-    private val usersRepository = UsersRepository()
     var userList = MutableLiveData<List<Users>>()
-
 
     init {
         getUserList()

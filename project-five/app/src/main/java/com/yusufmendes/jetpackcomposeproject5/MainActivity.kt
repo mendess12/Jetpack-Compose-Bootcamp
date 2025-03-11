@@ -10,7 +10,9 @@ import com.yusufmendes.jetpackcomposeproject5.presentation.detail.DetailViewMode
 import com.yusufmendes.jetpackcomposeproject5.presentation.home.HomeViewModel
 import com.yusufmendes.jetpackcomposeproject5.presentation.navigation.NavigateToScreen
 import com.yusufmendes.jetpackcomposeproject5.ui.theme.JetpackComposeProject5Theme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private val homeViewModel: HomeViewModel by viewModels()

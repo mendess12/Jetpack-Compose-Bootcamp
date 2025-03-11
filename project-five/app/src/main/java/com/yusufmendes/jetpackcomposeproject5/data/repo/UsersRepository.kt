@@ -2,10 +2,11 @@ package com.yusufmendes.jetpackcomposeproject5.data.repo
 
 import com.yusufmendes.jetpackcomposeproject5.data.model.Users
 import com.yusufmendes.jetpackcomposeproject5.data.resource.UsersDataSource
+import javax.inject.Inject
 
-class UsersRepository {
-
-    private val usersDataSource = UsersDataSource()
+class UsersRepository @Inject constructor(
+    private val usersDataSource: UsersDataSource
+) {
 
     suspend fun addUsers(name: String, phone: String) = usersDataSource.addUser(name, phone)
 

@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -21,6 +23,7 @@ fun HomeScreen() {
 
     val context = LocalContext.current
     val appPref = AppPref(context)
+    var count = remember { mutableStateOf(0) }
 
     LaunchedEffect(key1 = true) {
 
@@ -58,6 +61,11 @@ fun HomeScreen() {
             for (list in getList!!) {
                 Log.e("Gelen Liste", list)
             }
+
+            //count app
+            var getCount = appPref.readCount()
+            count.value = ++getCount
+            appPref.saveCount(getCount )
         }
     }
 
@@ -67,6 +75,6 @@ fun HomeScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        Text(text = "Açılış sayısı ", fontSize = 30.sp)
+        Text(text = "Açılış sayısı : ${count.value}", fontSize = 30.sp)
     }
 }

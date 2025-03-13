@@ -107,5 +107,14 @@
 | ------------------------- | ------------------------- |
 | ![toplama](https://github.com/user-attachments/assets/66260b3e-1091-47b9-9272-5b72567f12f7) | ![carpma](https://github.com/user-attachments/assets/68e184d1-2488-4dc3-9c7e-4c2456126bbb) |
 
+### Proje 8
+
+- Bu projede shared preferences ile veri ekleme, okuma ve silme işlemlerini uyguladım.
+- Shared preferences kullanarak uygulamanın kaç defa açıldığını gösteren metod oluşturdum.
+
+| Shared Preferences     | 
+| ------------------------- | 
+| <img width="960" alt="shared" src="https://github.com/user-attachments/assets/f564b53e-8878-43b0-a66d-891bdb9bdf3c" /> |
+
 
 

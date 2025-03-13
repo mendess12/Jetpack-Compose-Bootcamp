@@ -27,15 +27,38 @@ fun HomeScreen() {
         CoroutineScope(Dispatchers.Main).launch {
             //save
             appPref.saveName("Yusuf")
+            appPref.saveAge(24)
+            appPref.saveHeight(1.78)
+            appPref.saveMarry(false)
+
+            val list = HashSet<String>()
+            list.add("Mehmet")
+            list.add("Eda")
+            appPref.saveList(list)
 
             //delete
-            appPref.deleteName()
+            /* appPref.deleteName()
+             appPref.deleteAge()
+             appPref.deleteHeight()
+             appPref.deleteMarry()
+             appPref.deleteList()
+             appPref.deleteCount()*/
 
             //read
             val getName = appPref.readName()
             Log.e("Gelen isim", getName)
-        }
+            val getAge = appPref.readAge()
+            Log.e("Gelen Yaş", getAge.toString())
+            val getHeight = appPref.readHeight()
+            Log.e("Gelen Boy", getHeight.toString())
+            val getMarry = appPref.readMarry()
+            Log.e("Gelen Evli mi", getMarry.toString())
 
+            val getList = appPref.readList()
+            for (list in getList!!) {
+                Log.e("Gelen Liste", list)
+            }
+        }
     }
 
     Column(

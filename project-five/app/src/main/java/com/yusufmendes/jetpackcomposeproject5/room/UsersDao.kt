@@ -9,4 +9,7 @@ interface UsersDao {
 
     @Query("SELECT * FROM kisiler")
     suspend fun loadUsers(): List<Users>
+
+    @Query("SELECT * FROM kisiler WHERE kisi_ad like '%' || :searchWord || '%'")
+    suspend fun searchUser(searchWord: String): List<Users>
 }

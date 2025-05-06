@@ -27,11 +27,7 @@ class UsersDataSource(val userDao: UsersDao) {
     }
 
     suspend fun searchUser(search: String): List<Users> = withContext(Dispatchers.IO) {
-        val userList = ArrayList<Users>()
 
-        val user1 = Users(1, "Yusuf", "111111")
-        userList.add(user1)
-
-        return@withContext userList
+        return@withContext userDao.searchUser(search)
     }
 }

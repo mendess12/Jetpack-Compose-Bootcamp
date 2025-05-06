@@ -12,10 +12,10 @@ class UsersDataSource(val userDao: UsersDao) {
         userDao.addUser(newUser)
     }
 
-    suspend fun updateUser(userId: Int, userName: String, userPhone: String) =
-        withContext(Dispatchers.IO) {
-            //update user function
-        }
+    suspend fun updateUser(userId: Int, userName: String, userPhone: String) {
+        val user = Users(userId, userName, userPhone)
+        userDao.updateUser(user)
+    }
 
     suspend fun deleteUser(userId: Int) = withContext(Dispatchers.IO) {
         //delete user

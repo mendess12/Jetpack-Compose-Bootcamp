@@ -3,6 +3,7 @@ package com.yusufmendes.jetpackcomposeproject5.room
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.yusufmendes.jetpackcomposeproject5.data.model.Users
 
 @Dao
@@ -16,4 +17,7 @@ interface UsersDao {
 
     @Insert
     suspend fun addUser(users: Users)
+
+    @Update
+    suspend fun updateUser(users: Users)
 }

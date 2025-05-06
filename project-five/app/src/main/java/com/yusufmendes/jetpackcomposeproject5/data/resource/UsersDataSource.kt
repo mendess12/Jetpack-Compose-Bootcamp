@@ -18,7 +18,8 @@ class UsersDataSource(val userDao: UsersDao) {
     }
 
     suspend fun deleteUser(userId: Int) = withContext(Dispatchers.IO) {
-        //delete user
+        val user = Users(userId, "", "")
+        userDao.deleteUser(user)
     }
 
     suspend fun getUserList(): List<Users> = withContext(Dispatchers.IO) {

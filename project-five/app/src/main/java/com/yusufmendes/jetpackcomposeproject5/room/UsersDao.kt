@@ -1,6 +1,7 @@
 package com.yusufmendes.jetpackcomposeproject5.room
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
@@ -20,4 +21,7 @@ interface UsersDao {
 
     @Update
     suspend fun updateUser(users: Users)
+
+    @Delete
+    suspend fun deleteUser(users: Users)
 }

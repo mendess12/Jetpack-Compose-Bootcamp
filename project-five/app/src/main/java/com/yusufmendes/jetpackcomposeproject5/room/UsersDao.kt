@@ -1,6 +1,7 @@
 package com.yusufmendes.jetpackcomposeproject5.room
 
 import androidx.room.Dao
+import androidx.room.Insert
 import androidx.room.Query
 import com.yusufmendes.jetpackcomposeproject5.data.model.Users
 
@@ -12,4 +13,7 @@ interface UsersDao {
 
     @Query("SELECT * FROM kisiler WHERE kisi_ad like '%' || :searchWord || '%'")
     suspend fun searchUser(searchWord: String): List<Users>
+
+    @Insert
+    suspend fun addUser(users: Users)
 }

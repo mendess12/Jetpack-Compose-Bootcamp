@@ -7,10 +7,10 @@ import kotlinx.coroutines.withContext
 
 class UsersDataSource(val userDao: UsersDao) {
 
-    suspend fun addUser(name: String, phone: String): Unit =
-        withContext(Dispatchers.IO) {
-            //add user
-        }
+    suspend fun addUser(name: String, phone: String) {
+        val newUser = Users(0, name, phone)
+        userDao.addUser(newUser)
+    }
 
     suspend fun updateUser(userId: Int, userName: String, userPhone: String) =
         withContext(Dispatchers.IO) {
